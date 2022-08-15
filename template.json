@@ -1,0 +1,17 @@
+          {
+            "rules": [
+            {% for lol in thelist %}
+                {
+                "rule-type": "selection",
+                "rule-id": "{{ loop.index }}",
+                "rule-name": "{{ loop.index }}",
+                "object-locator": {
+                  "schema-name": "{{ lol.split('.')[0] }}",
+                  "table-name": "{{ lol.split('.')[1] }}"
+                  },
+                  "rule-action": "include",
+                  "filters": []
+                }{% if not loop.last %},{% endif %}
+            {% endfor %}
+            ]
+         }

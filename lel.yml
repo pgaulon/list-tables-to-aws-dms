@@ -1,0 +1,18 @@
+---
+- name: somelel
+  hosts: localhost
+  connection: local
+
+  vars:
+    thelist:
+      - public.countries
+      - public.currencies
+      - public.regions
+      - public.subregions
+
+  tasks:
+    - name: somelel
+      template:
+        dest: "{{ playbook_dir }}/done.json"
+        src: "{{ playbook_dir }}/template.json"
+      tags: lel
